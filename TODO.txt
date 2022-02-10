@@ -1,0 +1,6 @@
+FoodTruckDataService is responsible for loading the food truck data from the SFO data set. We can add a scheduler to get the latest data and update the cache with the latest results. 
+Currently, FoodTruckDataService is a part of Locator Service. This can be moved out as a separate service. Since fetching new data is not required frequently, we do not have to worry about scaling this new service
+We can add support for additional filters like the one present in the current service for getting only 'Approved' food trucks. Another filter could be to get Food trucks that serve 'tacos'
+Error handling - The service currently returns a HHTP error code with the error message. We expect the UI application to handle these error codes and display an appropriate message to the user on the UI.
+Scalability: The service can be packaged in a docker container and based on the load, we can scale up and down and can use Kubernetes to do the orchestration.
+  
